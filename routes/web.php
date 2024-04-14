@@ -1,5 +1,6 @@
 <?php
-
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CustomerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('dashboard',[
+        "title"=>"Dashboard"
+    ]);
+});
+
+Route::resource('kategori',CategoryController::class)
+->except('show','destroy','create');
+
+route::resource('pelanggan',CustomerController::class)->except('destroy');
