@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,3 +29,4 @@ Route::resource('kategori',CategoryController::class)
 ->except('show','destroy','create');
 
 route::resource('pelanggan',CustomerController::class)->except('destroy');
+route::resource('produk',ProductController::class);
