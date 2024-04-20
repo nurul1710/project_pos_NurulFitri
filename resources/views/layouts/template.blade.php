@@ -115,150 +115,159 @@
                             </a>
                         </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link {{($title==='Produk')?'active':''}}">
-                            <i class="nav-icon fas fa-boxes"></i>
-                            <p>
-                                Produk
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{route('produk.index')}}" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Input Produk</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Laporan Produk</p>
-                                </a>
-                            </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link {{($title==='Produk')?'active':''}}">
+                                <i class="nav-icon fas fa-boxes"></i>
+                                <p>
+                                    Produk
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('produk.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Input Produk</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Laporan Produk</p>
+                                    </a>
+                                </li>
 
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('pelanggan.index')}}" class="nav-link {{ ($title==='Customer')?'active':''}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Customer
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{route('pengguna.index')}}" class="nav-link {{ ($title==='Users')?'active':''}}">
-                            <i class="nav-icon fas fa-users"></i>
-                            <p>
-                                Users
-                            </p>
-                        </a>
-                    </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('pelanggan.index')}}" class="nav-link {{ ($title==='Customer')?'active':''}}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Customer
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{route('pengguna.index')}}" class="nav-link {{ ($title==='Users')?'active':''}}">
+                                <i class="nav-icon fas fa-users"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li>
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link {{ ($title==='Pembelian') ? 'active':'' }}">
-                            <i class="nav-icon fas fa-cash-register"></i>
-                            <p>
-                                Pembelian
-                            </p>
-                        </a>
-                    </li>
+                        <li class="nav-item">
+                            <a href="penjualan" target="_blank" class="nav-link {{ ($title==='Penjualan') ? 'active':'' }}">
+                                <i class="nav-icon fas fa-cash-register"></i>
+                                <p>
+                                    Penjualan
+                                </p>
+                            </a>
+                        </li>
+                        {{-- <li class="nav-item">
+                            <a href="order" class="nav-link {{ ($title==='Pembelian') ? 'active':'' }}">
+                                <i class="nav-icon fas fa-cash-register"></i>
+                                <p>
+                                    Pembelian
+                                </p>
+                            </a>
+                        </li> --}}
 
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                                Laporan
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="pages/tables/simple.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Harian</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/tables/data.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Bulanan</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="pages/tables/jsgrid.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Tahunan</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-table"></i>
+                                <p>
+                                    Laporan
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/tables/simple.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Harian</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/tables/data.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Bulanan</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/tables/jsgrid.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Tahunan</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
 
 
-                </ul>
-            </nav>
-            <!-- /.sidebar-menu -->
-        </div>
-        <!-- /.sidebar -->
-    </aside>
-
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-12">
-                        <h1 class="m-0">@yield('judulh1')</h1>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div>
-        <!-- /.content-header -->
-        <!-- Main content -->
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    @yield('konten')
-
-                </div>
-                <!-- /.row -->
+                    </ul>
+                </nav>
+                <!-- /.sidebar-menu -->
             </div>
-            <!-- /.container-fluid -->
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-12">
+                            <h1 class="m-0">@yield('judulh1')</h1>
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
+            <!-- Main content -->
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        @yield('konten')
+
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
         </div>
-        <!-- /.content -->
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+
     </div>
-    <!-- /.content-wrapper -->
+    <!-- ./wrapper -->
 
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
-    <!-- /.control-sidebar -->
+    <!-- REQUIRED SCRIPTS -->
 
+    <!-- jQuery -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
-</div>
-<!-- ./wrapper -->
+    @yield('tambahanJS')
 
-<!-- REQUIRED SCRIPTS -->
+    <!-- AdminLTE -->
+    <script src="{{ asset('dist/js/adminlte.js')}}"></script>
 
-<!-- jQuery -->
-<script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
-<!-- Bootstrap -->
-<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
-@yield('tambahanJS')
-
-<!-- AdminLTE -->
-<script src="{{ asset('dist/js/adminlte.js')}}"></script>
-
-<!-- OPTIONAL SCRIPTS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js')}}"></script>
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="{{ asset('plugins/chart.js/Chart.min.js')}}"></script>
 
 
-@yield('tambahScript')
+    @yield('tambahScript')
 </body>
 
 </html>
+

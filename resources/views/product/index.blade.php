@@ -44,7 +44,7 @@
                         <td>{{ $dt->name }}</td>
                         <td>{{ $dt->category->name }}</td>
                         <td>{{ $dt->stock }}</td>
-                        <td> @money($dt->price) </td>
+                        <td>@money($dt->price) </td>
                         <td>
                             <div class="btn-group">
                                 <form action="{{ route('produk.destroy',$dt->id)}}" method="POST">

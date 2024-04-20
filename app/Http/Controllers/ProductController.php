@@ -1,18 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Product;
-use App\Models\Category;
-use Illuminate\View\View;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
 
+use App\Models\Category;
+use App\Models\product;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index()
-    {
-        $product=Product::all();
+    //
+    public function index(){
+        $product=product::all();
         return view('product.index',[
             "title"=>"Product",
             "data"=>$product
@@ -25,8 +25,8 @@ class ProductController extends Controller
             "data"=>Category::all()
         ]);
     }
-    public function store(Request $request):RedirectResponse
-    {
+
+    public function store(Request $request):RedirectResponse{
         $request->validate([
             "name"=>"required",
             "description"=>"nullable",
@@ -34,21 +34,19 @@ class ProductController extends Controller
             "price"=>"required",
             "category_id"=>"required"
         ]);
-
-        Product::create($request->all());
-        return redirect()->route('produk.index')->with('success','Data Produk Berhasil Ditambahkan');
-    } 
+        product::create($request->all());
+        return redirect()->route('produk.index')->with('success','Data Product Berhasil Ditambahkan');
+    }
 
     public function edit(Product $produk):View
     {
         return view('product.edit',compact('produk'))->with([
-            "title"=> "Ubah Data Produk",
+            "title" => "Ubah Data Produk",
             "data"=>Category::all()
         ]);
-    } 
+    }
 
-    public function update(Product $produk, Request $request):RedirectResponse
-    {
+    public function update(product $produk, Request $request):RedirectResponse{
         $request->validate([
             "name"=>"required",
             "description"=>"nullable",
@@ -61,19 +59,29 @@ class ProductController extends Controller
         return redirect()->route('produk.index')->with('updated','Data Produk Berhasil Diubah');
     }
 
-    public function show():View
-     {
-         $product=Product::all();
-        return view('product.show')->with([
-           "title" => "Tampil Data Produk",
-           "data"=>$product
-     ]);
+    // public function show():View
+    // {
+    //     $product=Product::all();
+    //     return view('product.show')->with([
+    //         "title" => "Tampil Data Produk",
+    //         "data"=>$product
+    //     ]);
+    // }
 
+    public function show($id): View {
+        $product = Product::findOrFail($id);
+        return view('product.show')->with([
+            "title" => "Detail Produk",
+            "data" => $product
+        ]);
     }
+
 
     public function destroy($id):RedirectResponse
     {
+
         Product::where('id',$id)->delete();
-        return redirect()->route('produk.index')->with('delete','Data Produk Berhasil Dihapus');
+        return redirect()->route('produk.index')->with('deleted','Data Produk Berhasil Dihapus');
     }
+
 }

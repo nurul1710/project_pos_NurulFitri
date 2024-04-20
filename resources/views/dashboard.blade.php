@@ -1,7 +1,7 @@
 @extends('layouts.template')
 @section('judulh1','Admin - Dashboard')
 
-@section('konten') 
+@section('konten')
 <div class="col-lg-12">
     <div class="card">
         <div class="card-header border-0">

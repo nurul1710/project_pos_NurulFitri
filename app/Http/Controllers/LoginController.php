@@ -1,18 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-
 class LoginController extends Controller
 {
     //
-    public function loginView()
-    {
+
+    public function loginView(){
         return view('login');
     }
+
     public function authenticate(Request $request):RedirectResponse{
         $credentials=$request->validate([
             'email'=>['required','email:rfc,dns'],
@@ -24,8 +25,7 @@ class LoginController extends Controller
         }
         return back()->with('loginError','Login Filed');
     }
-
-    public function logout(Request $request):RedirectResponse
+    public function logout(Request $request): RedirectResponse
     {
         Auth::logout();
         $request->session()->invalidate();

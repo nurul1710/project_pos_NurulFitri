@@ -1,33 +1,35 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
+
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 
 class CategoryController extends Controller
 {
+    //
     public function index()
     {
         return view('category.category', [
             "title" => "Kategori",
-            "data" => category::all()
+            "data" => Category::all()
+
         ]);
     }
 
     public function store(Request $request): RedirectResponse
-{
-        $request->validate([
-            "name" => "required",
-            "description" => "nullable",
-        ]);
+    {
+            $request->validate([
+                "name" => "required",
+                "description" => "nullable",
+            ]);
 
-        Category::create($request->all());
+            Category::create($request->all());
 
-        return redirect()->route('kategori.index')->with('success','Kategori Berhasil Ditambahkan.');
-}
-
+            return redirect()->route('kategori.index')->with('success','Kategori Berhasil Ditambahkan.');
+    }
 
     public function edit(Category $kategori): View
     {

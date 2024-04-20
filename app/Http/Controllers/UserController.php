@@ -1,23 +1,23 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
     //
-    public function index()
-    {
+    public function index(){
         return view('user.index',[
             "title"=>"Data Pengguna",
             "data"=>User::all()
         ]);
     }
-    public function store(Request $request):RedirectResponse
-    {
+
+    public function store(Request $request):RedirectResponse{
         $request->validate([
             "name"=>"required",
             "email"=>"email:dns",
@@ -29,6 +29,7 @@ class UserController extends Controller
         ]);
 
         User::create($request->all());
+
         return redirect()->route('pengguna.index')->with('success','Data User Berhasil Ditambahkan');
     }
 }

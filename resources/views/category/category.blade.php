@@ -9,7 +9,7 @@
 @endsection
 
 @section('judulh1','Admin - Category')
-@section('judulh3','Category')                   
+@section('judulh3','Category')
 @section('konten')
 
 <div class="col-md-4">
